@@ -38,8 +38,63 @@ const Header = () => {
 
         {/* Auth Buttons */}
         <div className="auth-section">
-          <button className="auth-btn auth-signin">Sign In</button>
-          <button className="auth-btn auth-signup">Sign Up</button>
+       <button 
+  onClick={() => window.location.href = "https://www.bigmarketplace.biz/LoginRegister"} 
+  className="auth-btn auth-signin"
+  style={{
+    background: 'transparent',
+    border: 'none',
+    color: '#FFFFFF',
+    cursor: 'pointer',
+    padding: '0.7rem 2rem',
+    fontSize: '1rem',
+    fontFamily: "'Manrope', sans-serif",
+    fontWeight: '600',
+    position: 'relative',
+    textDecoration: 'none',
+    transition: 'all 0.3s ease',
+    letterSpacing: '0.3px',
+    border: '2px solid #FFB92D',
+    borderRadius: '8px',
+    boxShadow: '0 2px 10px rgba(255, 185, 45, 0.2)',
+    overflow: 'hidden'
+  }}
+  onMouseEnter={(e) => {
+    e.target.style.color = '#FFB92D';
+    e.target.style.transform = 'translateY(-2px)';
+    e.target.style.boxShadow = '0 4px 15px rgba(255, 185, 45, 0.3)';
+    e.target.style.backgroundColor = 'rgba(255, 185, 45, 0.1)';
+  }}
+  onMouseLeave={(e) => {
+    e.target.style.color = '#FFFFFF';
+    e.target.style.transform = 'translateY(0)';
+    e.target.style.boxShadow = '0 2px 10px rgba(255, 185, 45, 0.2)';
+    e.target.style.backgroundColor = 'transparent';
+  }}
+>
+  Sign in
+  {/* Moving line animation */}
+  <div
+    style={{
+      position: 'absolute',
+      bottom: '0',
+      left: '0',
+      width: '100%',
+      height: '3px',
+      background: 'linear-gradient(90deg, transparent, #FFB92D, #FFD166, transparent)',
+      transform: 'translateX(-100%)',
+      transition: 'transform 0.5s ease',
+      borderRadius: '2px'
+    }}
+    onMouseEnter={(e) => {
+      e.target.style.transform = 'translateX(100%)';
+    }}
+    onMouseLeave={(e) => {
+      e.target.style.transform = 'translateX(-100%)';
+    }}
+  />
+</button>
+          <button className="auth-btn auth-signup"><a href="/signup" className="nav-link" >Sign Up</a></button>
         </div>
 
         {/* Mobile Menu Button */}

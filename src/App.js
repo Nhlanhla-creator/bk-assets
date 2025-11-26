@@ -5,7 +5,7 @@ import HomePage from '../src/MainPages/HomePage';
 import About from '../src/MainPages/About';
 import Services from '../src/MainPages/Services';
 import Contact from '../src/MainPages/Contact';
-
+import LoginRegister from './LoginRegister'
 function App() {
   return (
     <Router>
@@ -15,6 +15,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
           <Route path="/contact" element={<Contact />} />
+            <Route path="/signup" element={<LoginRegister />} />
         </Routes>
       </div>
     </Router>
