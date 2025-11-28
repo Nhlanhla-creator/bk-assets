@@ -18,8 +18,6 @@ import {
   GraduationCap,
   Award,
   X,
-
-
   AlertTriangle,
 } from "lucide-react"
 import { useNavigate } from "react-router-dom"
@@ -44,7 +42,7 @@ export default function LoginRegister() {
   const navigate = useNavigate()
   const location = useLocation()
   const initialMode = new URLSearchParams(location.search).get("mode")
-  const [isRegistering, setIsRegistering] = useState(initialMode == "login")
+  const [isRegistering, setIsRegistering] = useState(initialMode !== "login") // Changed default to show register first
   const [showForgotPassword, setShowForgotPassword] = useState(false)
   const [resetEmail, setResetEmail] = useState("")
   const [resetMessage, setResetMessage] = useState("")
@@ -665,16 +663,14 @@ const handleRoleClick = (roleObj) => {
       <div className="auth-box">
         <div className="form-side">
           <div className="form-header">
-
-
-          
             <h2>{isRegistering ? "Create Your Account!" : "Welcome Back!"}</h2>
             <div className={`icon-container ${isRegistering ? "register" : "login"}`}>
               {isRegistering ? <Rocket size={24} /> : <Smile size={24} />}
             </div>
-            
           </div>
-  {authError && <div className="auth-error">{authError}</div>}
+          
+          {authError && <div className="auth-error">{authError}</div>}
+          
           <div className="form-box">
             {isRegistering ? (
               codeSent ? (
@@ -730,7 +726,7 @@ const handleRoleClick = (roleObj) => {
                     width: "100%",
                   }}
                 >
-                  {/* Username - Added instead of company name */}
+                  {/* Username */}
                   <div
                     style={{
                       display: "flex",
@@ -946,7 +942,7 @@ const handleRoleClick = (roleObj) => {
                     )}
                   </div>
 
-                  {/* Role Cards - Updated to 3x2 grid with specific arrangement */}
+                  {/* Role Cards */}
                   <div style={{ marginBottom: "16px" }}>
                     <label
                       style={{
@@ -978,15 +974,15 @@ const handleRoleClick = (roleObj) => {
                             position: "relative",
                             padding: "10px",
                             borderRadius: "12px",
-                            border: `2px solid ${roles.includes(card.id) ? "#8B4513" : "#D2B48C"}`,
-                            backgroundColor: roles.includes(card.id) ? "#F5E6D3" : "#FAF7F2",
+                            border: `2px solid ${roles.includes(card.id) ? "#223040" : "#ACB9C0"}`,
+                            backgroundColor: roles.includes(card.id) ? "#f0f4f8" : "#f8f9fa",
                             cursor: "pointer",
                             transition: "all 0.3s ease",
                             transform: hoveredCard === card.id ? "translateY(-2px)" : "translateY(0)",
                             boxShadow:
                               hoveredCard === card.id
-                                ? "0 8px 25px rgba(139, 69, 19, 0.15)"
-                                : "0 2px 8px rgba(139, 69, 19, 0.08)",
+                                ? "0 8px 25px rgba(34, 48, 64, 0.15)"
+                                : "0 2px 8px rgba(34, 48, 64, 0.08)",
                             minHeight: "80px",
                             display: "flex",
                             flexDirection: "column",
@@ -997,7 +993,7 @@ const handleRoleClick = (roleObj) => {
                         >
                           <div
                             style={{
-                              color: roles.includes(card.id) ? "#8B4513" : "#A0522D",
+                              color: roles.includes(card.id) ? "#223040" : "#272524",
                               marginBottom: "6px",
                               transition: "color 0.3s ease",
                             }}
@@ -1009,14 +1005,14 @@ const handleRoleClick = (roleObj) => {
                               margin: "0 0 2px 0",
                               fontSize: "11px",
                               fontWeight: "600",
-                              color: roles.includes(card.id) ? "#8B4513" : "#A0522D",
+                              color: roles.includes(card.id) ? "#223040" : "#272524",
                               fontFamily: "Quicksand, sans-serif",
                               lineHeight: "1.2",
                             }}
                           >
                             {card.title}
                           </h4>
-                          {/* Hover Info Overlay - Dark Brown with White Text */}
+                          {/* Hover Info Overlay */}
                           {hoveredCard === card.id && (
                             <div
                               style={{
@@ -1025,7 +1021,7 @@ const handleRoleClick = (roleObj) => {
                                 left: 0,
                                 right: 0,
                                 bottom: 0,
-                                background: "linear-gradient(135deg, #3E2723 0%, #4E342E 50%, #5D4037 100%)",
+                                background: "linear-gradient(135deg, #223040 0%, #2c3e50 100%)",
                                 borderRadius: "10px",
                                 display: "flex",
                                 alignItems: "center",
@@ -1225,8 +1221,8 @@ const handleRoleClick = (roleObj) => {
                   <div
                     style={{
                       padding: "12px",
-                      backgroundColor: "#FFF3CD",
-                      border: "1px solid #FFEAA7",
+                      backgroundColor: "#e8f4fd",
+                      border: "1px solid #b3d9f5",
                       borderRadius: "8px",
                       marginBottom: "16px",
                     }}
@@ -1235,7 +1231,7 @@ const handleRoleClick = (roleObj) => {
                       style={{
                         margin: "0 0 8px 0",
                         fontSize: "14px",
-                        color: "#856404",
+                        color: "#1e5a8c",
                         fontWeight: "600",
                       }}
                     >
@@ -1245,7 +1241,7 @@ const handleRoleClick = (roleObj) => {
                       style={{
                         margin: "0 0 8px 0",
                         fontSize: "13px",
-                        color: "#856404",
+                        color: "#1e5a8c",
                       }}
                     >
                       Please check your email and click the verification link before logging in.
@@ -1254,8 +1250,8 @@ const handleRoleClick = (roleObj) => {
                       onClick={resendVerificationEmail}
                       style={{
                         background: "transparent",
-                        border: "1px solid #856404",
-                        color: "#856404",
+                        border: "1px solid #1e5a8c",
+                        color: "#1e5a8c",
                         padding: "4px 8px",
                         borderRadius: "4px",
                         cursor: "pointer",
@@ -1369,7 +1365,7 @@ const handleRoleClick = (roleObj) => {
                 maxWidth: "420px",
                 width: "100%",
                 boxShadow: "0 20px 60px rgba(0, 0, 0, 0.15)",
-                border: "1px solid #e8ddd6",
+                border: "1px solid #e1e5e9",
                 position: "relative",
                 animation: "slideUp 0.3s ease-out",
               }}
@@ -1384,7 +1380,7 @@ const handleRoleClick = (roleObj) => {
                   background: "transparent",
                   border: "none",
                   cursor: "pointer",
-                  color: "#8d6e63",
+                  color: "#223040",
                   padding: "4px",
                   borderRadius: "50%",
                   display: "flex",
@@ -1393,7 +1389,7 @@ const handleRoleClick = (roleObj) => {
                   transition: "all 0.2s ease",
                 }}
                 onMouseEnter={(e) => {
-                  e.target.style.backgroundColor = "#f5f2f0"
+                  e.target.style.backgroundColor = "#f3f4f6"
                 }}
                 onMouseLeave={(e) => {
                   e.target.style.backgroundColor = "transparent"
@@ -1413,13 +1409,13 @@ const handleRoleClick = (roleObj) => {
                   style={{
                     width: "50px",
                     height: "50px",
-                    backgroundColor: "#8d6e63",
+                    backgroundColor: "#223040",
                     borderRadius: "50%",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
                     margin: "0 auto 12px auto",
-                    boxShadow: "0 6px 20px rgba(141, 110, 99, 0.3)",
+                    boxShadow: "0 6px 20px rgba(34, 48, 64, 0.3)",
                   }}
                 >
                   <Users size={24} color="white" />
@@ -1429,7 +1425,7 @@ const handleRoleClick = (roleObj) => {
                     margin: "0 0 6px 0",
                     fontSize: "20px",
                     fontWeight: "700",
-                    color: "#4a352f",
+                    color: "#223040",
                     fontFamily: "Quicksand, sans-serif",
                   }}
                 >
@@ -1439,7 +1435,7 @@ const handleRoleClick = (roleObj) => {
                   style={{
                     margin: "0",
                     fontSize: "13px",
-                    color: "#7d5a50",
+                    color: "#6b7280",
                     lineHeight: "1.4",
                     fontFamily: "Quicksand, sans-serif",
                   }}
@@ -1448,7 +1444,7 @@ const handleRoleClick = (roleObj) => {
                 </p>
               </div>
 
-              {/* Criteria List - Compact */}
+              {/* Criteria List */}
               <div
                 style={{
                   marginBottom: "18px",
@@ -1468,8 +1464,8 @@ const handleRoleClick = (roleObj) => {
                       alignItems: "center",
                       gap: "10px",
                       padding: "8px 12px",
-                      backgroundColor: "#faf7f2",
-                      border: "1px solid #e8ddd6",
+                      backgroundColor: "#f8f9fa",
+                      border: "1px solid #e1e5e9",
                       borderRadius: "8px",
                       marginBottom: "6px",
                     }}
@@ -1478,7 +1474,7 @@ const handleRoleClick = (roleObj) => {
                       style={{
                         width: "16px",
                         height: "16px",
-                        backgroundColor: "#8d6e63",
+                        backgroundColor: "#223040",
                         borderRadius: "50%",
                         display: "flex",
                         alignItems: "center",
@@ -1490,7 +1486,7 @@ const handleRoleClick = (roleObj) => {
                     </div>
                     <span
                       style={{
-                        color: "#4a352f",
+                        color: "#374151",
                         fontFamily: "Quicksand, sans-serif",
                         fontSize: "13px",
                         lineHeight: "1.3",
@@ -1505,8 +1501,8 @@ const handleRoleClick = (roleObj) => {
               {/* Confirmation */}
               <div
                 style={{
-                  backgroundColor: "#f0e6d9",
-                  border: "1px solid #c8b6a6",
+                  backgroundColor: "#e8f4fd",
+                  border: "1px solid #b3d9f5",
                   borderRadius: "10px",
                   padding: "12px",
                   marginBottom: "18px",
@@ -1517,7 +1513,7 @@ const handleRoleClick = (roleObj) => {
                   style={{
                     margin: "0",
                     fontSize: "12px",
-                    color: "#6d4c41",
+                    color: "#1e5a8c",
                     lineHeight: "1.4",
                     fontFamily: "Quicksand, sans-serif",
                   }}
@@ -1538,7 +1534,7 @@ const handleRoleClick = (roleObj) => {
                 <button
                   onClick={handleAdvisorCriteriaAccept}
                   style={{
-                    backgroundColor: "#8d6e63",
+                    backgroundColor: "#223040",
                     color: "white",
                     border: "none",
                     padding: "10px 20px",
@@ -1548,14 +1544,14 @@ const handleRoleClick = (roleObj) => {
                     cursor: "pointer",
                     fontFamily: "Quicksand, sans-serif",
                     transition: "all 0.2s ease",
-                    boxShadow: "0 3px 10px rgba(141, 110, 99, 0.3)",
+                    boxShadow: "0 3px 10px rgba(34, 48, 64, 0.3)",
                   }}
                   onMouseEnter={(e) => {
-                    e.target.style.backgroundColor = "#6d4c41"
+                    e.target.style.backgroundColor = "#1a2530"
                     e.target.style.transform = "translateY(-1px)"
                   }}
                   onMouseLeave={(e) => {
-                    e.target.style.backgroundColor = "#8d6e63"
+                    e.target.style.backgroundColor = "#223040"
                     e.target.style.transform = "translateY(0)"
                   }}
                 >
@@ -1565,8 +1561,8 @@ const handleRoleClick = (roleObj) => {
                   onClick={handleAdvisorCriteriaCancel}
                   style={{
                     backgroundColor: "transparent",
-                    color: "#8d6e63",
-                    border: "2px solid #8d6e63",
+                    color: "#223040",
+                    border: "2px solid #223040",
                     padding: "10px 20px",
                     borderRadius: "8px",
                     fontWeight: "600",
@@ -1576,7 +1572,7 @@ const handleRoleClick = (roleObj) => {
                     transition: "all 0.2s ease",
                   }}
                   onMouseEnter={(e) => {
-                    e.target.style.backgroundColor = "#f5f2f0"
+                    e.target.style.backgroundColor = "#f3f4f6"
                   }}
                   onMouseLeave={(e) => {
                     e.target.style.backgroundColor = "transparent"
@@ -1589,7 +1585,7 @@ const handleRoleClick = (roleObj) => {
           </div>
         )}
 
-        {/* Updated Role Selection Modal */}
+        {/* Role Selection Modal */}
         {roleSelectionModal.show && (
           <div
             className="modal-overlay"
@@ -1616,7 +1612,7 @@ const handleRoleClick = (roleObj) => {
                 maxWidth: "480px",
                 width: "100%",
                 boxShadow: "0 20px 60px rgba(0, 0, 0, 0.15)",
-                border: "1px solid #e8ddd6",
+                border: "1px solid #e1e5e9",
                 position: "relative",
                 animation: "slideUp 0.3s ease-out",
               }}
@@ -1631,7 +1627,7 @@ const handleRoleClick = (roleObj) => {
                   background: "transparent",
                   border: "none",
                   cursor: "pointer",
-                  color: "#8d6e63",
+                  color: "#223040",
                   padding: "4px",
                   borderRadius: "50%",
                   display: "flex",
@@ -1640,7 +1636,7 @@ const handleRoleClick = (roleObj) => {
                   transition: "all 0.2s ease",
                 }}
                 onMouseEnter={(e) => {
-                  e.target.style.backgroundColor = "#f5f2f0"
+                  e.target.style.backgroundColor = "#f3f4f6"
                 }}
                 onMouseLeave={(e) => {
                   e.target.style.backgroundColor = "transparent"
@@ -1660,13 +1656,13 @@ const handleRoleClick = (roleObj) => {
                   style={{
                     width: "60px",
                     height: "60px",
-                    backgroundColor: "#8d6e63",
+                    backgroundColor: "#223040",
                     borderRadius: "50%",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
                     margin: "0 auto 16px auto",
-                    boxShadow: "0 8px 24px rgba(141, 110, 99, 0.3)",
+                    boxShadow: "0 8px 24px rgba(34, 48, 64, 0.3)",
                   }}
                 >
                   <Users size={28} color="white" />
@@ -1676,7 +1672,7 @@ const handleRoleClick = (roleObj) => {
                     margin: "0 0 8px 0",
                     fontSize: "24px",
                     fontWeight: "700",
-                    color: "#4a352f",
+                    color: "#223040",
                     fontFamily: "Quicksand, sans-serif",
                   }}
                 >
@@ -1686,7 +1682,7 @@ const handleRoleClick = (roleObj) => {
                   style={{
                     margin: "0",
                     fontSize: "15px",
-                    color: "#7d5a50",
+                    color: "#6b7280",
                     lineHeight: "1.5",
                     fontFamily: "Quicksand, sans-serif",
                   }}
@@ -1696,165 +1692,157 @@ const handleRoleClick = (roleObj) => {
               </div>
 
               {/* Role Options */}
-             <div
-  style={{
-    display: "flex",
-    flexDirection: "column",
-    gap: "12px",
-    marginBottom: "24px",
-  }}
->
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "12px",
+                  marginBottom: "24px",
+                }}
+              >
+                <button 
+                  onClick={handleReturnToForm}
+                  style={{
+                    backgroundColor: "transparent",
+                    border: "1px solid var(--primary)",
+                    color: "var(--primary)",
+                    padding: "8px 16px",
+                    borderRadius: "8px",
+                    cursor: "pointer",
+                    fontSize: "14px",
+                    marginTop: "10px"
+                  }}
+                >
+                  ← Return to Complete Registration
+                </button>
 
-  <button 
-  onClick={handleReturnToForm}
-  style={{
-    backgroundColor: "transparent",
-    border: "1px solid var(--primary)",
-    color: "var(--primary)",
-    padding: "8px 16px",
-    borderRadius: "8px",
-    cursor: "pointer",
-    fontSize: "14px",
-    marginTop: "10px"
-  }}
->
-  ← Return to Complete Registration
-</button>
+                {roleSelectionModal.roles.map((r, index) => {
+                  const isDeleted = r.deletedStatus || false;
+                  const daysAgo = isDeleted && r.deletedAt
+                    ? Math.floor((Date.now() - r.deletedAt) / (1000 * 60 * 60 * 24))
+                    : null;
+                  const roleObj = typeof r === "string" ? { name: r, deletedStatus: false } : r;
 
-{roleSelectionModal.roles.map((r, index) => {
-  const isDeleted = r.deletedStatus || false;
-  const daysAgo = isDeleted && r.deletedAt
-    ? Math.floor((Date.now() - r.deletedAt) / (1000 * 60 * 60 * 24))
-    : null;
-  // Ensure r is always an object with name + deletedStatus
-  const roleObj = typeof r === "string" ? { name: r, deletedStatus: false } : r;
+                  return (
+                    <button
+                      key={roleObj.name || index}
+                      onClick={() => {
+                        if (isDeleted) {
+                          localStorage.setItem("selectedDeletedRole", JSON.stringify(r));
+                          window.location.href = "/RetrieveAccount";
+                        } else {
+                          handleRoleClick(roleObj);
+                        }
+                      }}
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "16px",
+                        padding: "16px 20px",
+                        backgroundColor: "#f8f9fa",
+                        border: "2px solid #e1e5e9",
+                        borderRadius: "12px",
+                        cursor: "pointer",
+                        fontFamily: "Quicksand, sans-serif",
+                        fontSize: "16px",
+                        fontWeight: "600",
+                        color: "#223040",
+                        width: "100%",
+                        opacity: isDeleted ? 0.6 : 1,
+                        transition: "all 0.3s ease",
+                      }}
+                      onMouseEnter={(e) => {
+                        if (!isDeleted) {
+                          e.currentTarget.style.backgroundColor = "#e8f4fd";
+                          e.currentTarget.style.borderColor = "#b3d9f5";
+                          e.currentTarget.style.transform = "translateY(-2px)";
+                          e.currentTarget.style.boxShadow = "0 8px 24px rgba(34, 48, 64, 0.15)";
+                        }
+                      }}
+                      onMouseLeave={(e) => {
+                        if (!isDeleted) {
+                          e.currentTarget.style.backgroundColor = "#f8f9fa";
+                          e.currentTarget.style.borderColor = "#e1e5e9";
+                          e.currentTarget.style.transform = "translateY(0)";
+                          e.currentTarget.style.boxShadow = "none";
+                        }
+                      }}
+                    >
+                      <div
+                        style={{
+                          width: "40px",
+                          height: "40px",
+                          backgroundColor: "#223040",
+                          borderRadius: "10px",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          color: "white",
+                          flexShrink: 0,
+                        }}
+                      >
+                        {getRoleIcon(r.name)}
+                      </div>
+                      <div style={{ flex: 1 }}>
+                        <div style={{ fontSize: "16px", fontWeight: "700", color: "#223040", marginBottom: "2px" }}>
+                          {getRoleDashboardName(r.name)}
+                        </div>
+                        <div style={{ fontSize: "13px", color: "#6b7280", fontWeight: "500" }}>
+                          {isDeleted
+                            ? `Deleted ${daysAgo} day${daysAgo !== 1 ? "s" : ""} ago`
+                            : getRoleDescription(r.name)}
+                        </div>
+                      </div>
+                      <div style={{ color: "#223040", opacity: 0.7 }}>→</div>
+                    </button>
+                  );
+                })}
+              </div>
 
-  return (
-    <button
-      key={roleObj.name || index}
-  onClick={() => {
-  if (isDeleted) {
-    // Save the clicked role so RetrieveAccount knows which one to retrieve
-    localStorage.setItem("selectedDeletedRole", JSON.stringify(r));
-    window.location.href = "/RetrieveAccount"; // navigate to your retrieve page
-  } else {
-    // Ensure r is an object with name and deletedStatus
-    const roleObj = typeof r === "string" ? { name: r, deletedStatus: false } : r;
-    handleRoleClick(roleObj); // normal active role navigation
-  }
-}}
-      style={{
-        display: "flex",
-        alignItems: "center",
-        gap: "16px",
-        padding: "16px 20px",
-        backgroundColor: "#faf7f2",
-        border: "2px solid #e8ddd6",
-        borderRadius: "12px",
-        cursor: "pointer",
-        fontFamily: "Quicksand, sans-serif",
-        fontSize: "16px",
-        fontWeight: "600",
-        color: "#4a352f",
-        width: "100%",
-        opacity: isDeleted ? 0.6 : 1,
-        transition: "all 0.3s ease",
-      }}
-      onMouseEnter={(e) => {
-        if (!isDeleted) {
-          e.currentTarget.style.backgroundColor = "#f0e6d9";
-          e.currentTarget.style.borderColor = "#c8b6a6";
-          e.currentTarget.style.transform = "translateY(-2px)";
-          e.currentTarget.style.boxShadow = "0 8px 24px rgba(141, 110, 99, 0.15)";
-        }
-      }}
-      onMouseLeave={(e) => {
-        if (!isDeleted) {
-          e.currentTarget.style.backgroundColor = "#faf7f2";
-          e.currentTarget.style.borderColor = "#e8ddd6";
-          e.currentTarget.style.transform = "translateY(0)";
-          e.currentTarget.style.boxShadow = "none";
-        }
-      }}
-    >
-      <div
-        style={{
-          width: "40px",
-          height: "40px",
-          backgroundColor: "#8d6e63",
-          borderRadius: "10px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          color: "white",
-          flexShrink: 0,
-        }}
-      >
-        {getRoleIcon(r.name)}
-      </div>
-      <div style={{ flex: 1 }}>
-        <div style={{ fontSize: "16px", fontWeight: "700", color: "#4a352f", marginBottom: "2px" }}>
-          {getRoleDashboardName(r.name)}
-        </div>
-        <div style={{ fontSize: "13px", color: "#7d5a50", fontWeight: "500" }}>
-          {isDeleted
-            ? `Deleted ${daysAgo} day${daysAgo !== 1 ? "s" : ""} ago`
-            : getRoleDescription(r.name)}
-        </div>
-      </div>
-      <div style={{ color: "#8d6e63", opacity: 0.7 }}>→</div>
-    </button>
-  );
-})}
-
-
-</div>
-
-{/* Info Note */}
-<div
-  style={{
-    backgroundColor: "#f0e6d9",
-    border: "1px solid #c8b6a6",
-    borderRadius: "10px",
-    padding: "12px 16px",
-    display: "flex",
-    alignItems: "flex-start",
-    gap: "12px",
-  }}
->
-  <div
-    style={{
-      width: "20px",
-      height: "20px",
-      backgroundColor: "#8d6e63",
-      borderRadius: "50%",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      flexShrink: 0,
-      marginTop: "1px",
-    }}
-  >
-    <span style={{ color: "white", fontSize: "12px", fontWeight: "bold" }}>i</span>
-  </div>
-  <p
-    style={{
-      margin: "0",
-      fontSize: "13px",
-      color: "#6d4c41",
-      lineHeight: "1.4",
-      fontFamily: "Quicksand, sans-serif",
-    }}
-  >
-    <strong>Tip:</strong> You can always switch between dashboards by clicking your profile picture in the header.
-  </p>
-</div>
-
+              {/* Info Note */}
+              <div
+                style={{
+                  backgroundColor: "#e8f4fd",
+                  border: "1px solid #b3d9f5",
+                  borderRadius: "10px",
+                  padding: "12px 16px",
+                  display: "flex",
+                  alignItems: "flex-start",
+                  gap: "12px",
+                }}
+              >
+                <div
+                  style={{
+                    width: "20px",
+                    height: "20px",
+                    backgroundColor: "#223040",
+                    borderRadius: "50%",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    flexShrink: 0,
+                    marginTop: "1px",
+                  }}
+                >
+                  <span style={{ color: "white", fontSize: "12px", fontWeight: "bold" }}>i</span>
+                </div>
+                <p
+                  style={{
+                    margin: "0",
+                    fontSize: "13px",
+                    color: "#1e5a8c",
+                    lineHeight: "1.4",
+                    fontFamily: "Quicksand, sans-serif",
+                  }}
+                >
+                  <strong>Tip:</strong> You can always switch between dashboards by clicking your profile picture in the header.
+                </p>
+              </div>
             </div>
           </div>
         )}
 
-        {/* Updated welcome-side with conditional alignment */}
+        {/* Welcome Side */}
         <div className={`welcome-side ${isRegistering ? "top-aligned" : ""}`}>
           <div className="welcome-content">
             <h1>Welcome Home!</h1>
