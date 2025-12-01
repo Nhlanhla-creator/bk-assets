@@ -1,8 +1,28 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
 
 const HomePage = () => {
+  const navigate = useNavigate();
+
+  // Navigation handlers
+  const handleHowItWorks = () => {
+    navigate('/services');
+  };
+
+  const handlePartnerWithUs = () => {
+    navigate('/contact');
+  };
+
+  const handleConnectWithUs = () => {
+    navigate('/signup');
+  };
+
+  const handleLearnMore = () => {
+    navigate('/services');
+  };
+
   return (
     <div className="homepage">
       <Header />
@@ -15,14 +35,18 @@ const HomePage = () => {
             We connect capital, equipment, and operator performance through a secure, data-driven platform — creating growth without ownership barriers.
           </p>
           <div className="hero-buttons">
-            <button className="btn btn-primary">Discover How It Works</button>
-            <button className="btn btn-secondary">Partner With BK-AX</button>
+            <button className="btn btn-primary" onClick={handleHowItWorks}>
+              Discover How It Works
+            </button>
+            <button className="btn btn-secondary" onClick={handlePartnerWithUs}>
+              Partner With BK-AX
+            </button>
           </div>
         </div>
         <div className="hero-visual">
           <div className="hero-image">
             <img 
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrPXDkmXJszyOlhjNTMYKSmiT0eLmWFrKTpw&s" 
+              src="https://cdn.shortpixel.ai/spai/ret_img/www.haladjian-mining.com/wp-content/uploads/2023/07/heavy-machinery-mining-industry.webp" 
               alt="Large mining excavator at work"
               className="hero-equipment-img"
             />
@@ -161,8 +185,12 @@ const HomePage = () => {
               Our ecosystem spans OEM partnerships, IoT coverage across 90% of mining regions, and fully localised ownership and compliance structures.
             </p>
             <div className="cta-buttons">
-              <button className="btn btn-primary">Connect With Us</button>
-              <button className="btn btn-secondary learn-more-btn">Learn More</button>
+              <button className="btn btn-primary" onClick={handleConnectWithUs}>
+                Connect With Us
+              </button>
+              <button className="btn btn-secondary learn-more-btn" onClick={handleLearnMore}>
+                Learn More
+              </button>
             </div>
           </div>
         </div>
