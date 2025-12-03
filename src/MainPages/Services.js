@@ -75,7 +75,7 @@ const Services = () => {
               <div className="stakeholder-visual">
                 <div className="visual-card">
                   <div className="card-image">
-                    <img src="https://sitechrockymtn.com/wp-content/uploads/2020/12/Intext-2.jpg" alt="Rapid Deployment" />
+                    <img src="https://www.bellequipment.com/wp-content/uploads/2021/02/Kele-Mining6938-web.jpg" alt="Rapid Deployment" />
                   </div>
                   <h4>Rapid Deployment</h4>
                   <p>Get equipment on-site within days, not months</p>
@@ -200,7 +200,7 @@ const Services = () => {
                   </div>
                   <div className="feature-item">
                     <div className="feature-image">
-                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSK-pa4heD23Jsy9wlwiK0YV9FqXe_1gcaQ1g&s" alt="Value Protection" />
+                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmZ_io-ww-17jnhu2XZ6aOJdMQVjOsRQ1_WQ&s" alt="Value Protection" />
                     </div>
                     <div className="feature-content">
                       <h5>Value Protection</h5>
@@ -209,7 +209,7 @@ const Services = () => {
                   </div>
                   <div className="feature-item">
                     <div className="feature-image">
-                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuP-9Vizp_0DkasNFdLF0jm9OwSBOT5I2nlg&s" alt="Service Expansion" />
+                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCdb2hmEmDvzcd5JUOschk8--JfcZ9h2ljXA&s" alt="Service Expansion" />
                     </div>
                     <div className="feature-content">
                       <h5>Service Expansion</h5>

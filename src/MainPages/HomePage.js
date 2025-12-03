@@ -72,7 +72,7 @@ const HomePage = () => {
             <div className="key-insights">
               <div className="insight-item">
                 <div className="insight-image">
-                  <img src="https://19lesterg.weebly.com/uploads/2/3/4/3/23430510/1494862.gif" alt="Miner with pickaxe" />
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCdb2hmEmDvzcd5JUOschk8--JfcZ9h2ljXA&s" alt="Miner with pickaxe" />
                 </div>
                 <div className="insight-percentage">60%</div>
                 <div className="insight-text">of Africa's operators can't scale due to equipment shortages.</div>
@@ -108,14 +108,14 @@ const HomePage = () => {
             <div className="pillars">
               <div className="pillar">
                 <div className="pillar-image">
-                  <img src="https://sitechrockymtn.com/wp-content/uploads/2020/12/Intext-2.jpg" alt="Mining pickaxe" />
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSieMe1Peg-JUWNn5VQPkYjz66hUYcs8VuwTg&s" alt="Mining pickaxe" />
                 </div>
                 <h3 className="pillar-title">Capital Efficiency</h3>
                 <p className="pillar-description">Transform CapEx into predictable OpEx.</p>
               </div>
               <div className="pillar">
                 <div className="pillar-image">
-                  <img src="https://cdn.prod.website-files.com/5e7fdf360c4ef47490fa4124/6920b692f73e204123b92c89_62618cbf4c344c89dd0ba8b2_0002822.jpeg" alt="Worker using jackhammer" />
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDIKH8J7ujkgqh1yl7x3PpPxgfmKdOO1GUnQ&s" alt="Worker using jackhammer" />
                 </div>
                 <h3 className="pillar-title">Operational Intelligence</h3>
                 <p className="pillar-description">Monitor, insure, and optimise every deployed asset.</p>
@@ -158,14 +158,14 @@ const HomePage = () => {
               </div>
               <div className="highlight">
                 <div className="highlight-image">
-                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSK-pa4heD23Jsy9wlwiK0YV9FqXe_1gcaQ1g&s" alt="Roof bolter" />
+                  <img src="https://media.licdn.com/dms/image/v2/C4D1BAQFdwdQ3SivxOA/company-background_10000/company-background_10000/0/1617279715990/kele_mining_solutions_cover?e=2147483647&v=beta&t=5zupc6Vea67Hk0EQYuZA1s2rBHwBqD9X258kb7xOfFM" alt="Roof bolter" />
                 </div>
                 <div className="highlight-value">40%</div>
                 <div className="highlight-label">lower default incidence</div>
               </div>
               <div className="highlight">
                 <div className="highlight-image">
-                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuP-9Vizp_0DkasNFdLF0jm9OwSBOT5I2nlg&s" alt="Jackhammer operation" />
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCdb2hmEmDvzcd5JUOschk8--JfcZ9h2ljXA&s" alt="Jackhammer operation" />
                 </div>
                 <div className="highlight-value">R1B+</div>
                 <div className="highlight-label">capital pipeline</div>

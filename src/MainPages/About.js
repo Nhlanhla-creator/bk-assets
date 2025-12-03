@@ -45,14 +45,14 @@ const AboutUs = () => {
             <div className="vm-grid">
               <div className="vm-card vm-card-yellow">
                 <div className="vm-image">
-                  <img src="https://sitechrockymtn.com/wp-content/uploads/2020/12/Intext-2.jpg" alt="Mining pickaxe" />
+                  <img src="https://www.bellequipment.com/wp-content/uploads/2021/02/Kele-Mining6938-web.jpg" alt="Mining pickaxe" />
                 </div>
                 <h3>Our Vision</h3>
                 <p>To power Africa's industrial transformation by turning assets into engines of shared prosperity.</p>
               </div>
               <div className="vm-card vm-card-blue">
                 <div className="vm-image">
-                  <img src="https://cdn.prod.website-files.com/5e7fdf360c4ef47490fa4124/6920b692f73e204123b92c89_62618cbf4c344c89dd0ba8b2_0002822.jpeg" alt="Worker using jackhammer" />
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSieMe1Peg-JUWNn5VQPkYjz66hUYcs8VuwTg&s" alt="Worker using jackhammer" />
                 </div>
                 <h3>Our Mission</h3>
                 <p>To unlock productive capital for growth-ready enterprises by combining intelligent financing, operational excellence, and real-time asset intelligence.</p>
